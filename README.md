@@ -54,3 +54,11 @@ python main.py
 ### Ansh Soni
 #### 🎓 Python Developer | Tech Enthusiast
 
+### 📞 Contact me
+#### 🔗LinkedIn: [Connect with me](https://www.linkedin.com/in/anshmnsoni)
+
+<hr/>
+
+### Just play once,
+### Enjoy the game! 🎮
+### Thank you 💫
