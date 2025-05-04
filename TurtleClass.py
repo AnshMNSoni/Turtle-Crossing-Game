@@ -3,8 +3,6 @@ from turtle import Turtle, Screen
 ALIGNMENT = 'Center'
 FONT = ('Courier', 22, 'normal')
 
-screen = Screen()
-
 class Object(Turtle):
     def __init__(self):
         super().__init__()
@@ -14,23 +12,39 @@ class Object(Turtle):
         self.penup()
         self.goto(0, -370)
         self.setheading(90)
-        
+        self.score = 0
+        self.lives = 3
+        self.paused = False
+
+        self.display = Turtle()
+        self.display.hideturtle()
+        self.display.penup()
+        self.display.goto(-450, 350)
+        self.update_scoreboard()
+
     def up(self):
-        self.fd(20) 
-        
+        if not self.paused:
+            self.forward(20)
+
     def down(self):
-        self.bk(20)
-    
+        if not self.paused:
+            self.backward(20)
+
+    def toggle_pause(self):
+        self.paused = not self.paused
+
+    def update_scoreboard(self):
+        self.display.clear()
+        self.display.write(f"Score: {self.score}  Lives: {self.lives}", align='left', font=FONT)
+
     def win(self):
         t = Turtle()
         t.hideturtle()
-        t.color('black')
+        t.color('green')
         t.write(f':: Win ::', align=ALIGNMENT, font=FONT)
 
     def gameover(self):
         t = Turtle()
         t.hideturtle()
-        t.color('black')
+        t.color('red')
         t.write(f':: Game Over ::', align=ALIGNMENT, font=FONT)
-    
-        
